@@ -88,14 +88,14 @@ export default function Hero() {
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           <a
             href="mailto:nikhil.sharma2407@gmail.com"
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 glow"
+            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 glow cursor-pointer"
           >
             <Mail size={20} />
             Get in touch
           </a>
           <a
             href="#"
-            className="flex items-center gap-2 px-6 py-3 glass rounded-lg hover:scale-105 transition-all duration-300 text-gray-800 dark:text-gray-200"
+            className="flex items-center gap-2 px-6 py-3 glass rounded-lg hover:scale-105 transition-all duration-300 text-gray-800 dark:text-gray-200 cursor-pointer"
           >
             <Download size={20} />
             Download CV
@@ -107,7 +107,7 @@ export default function Hero() {
             href="https://linkedin.com/in/nikhil-web-js"
             target="_blank"
             rel="noopener noreferrer"
-            className="glass p-3 rounded-full text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125 hover:shadow-lg"
+            className="glass p-3 rounded-full text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125 hover:shadow-lg cursor-pointer"
             aria-label="LinkedIn"
           >
             <Linkedin size={24} />
@@ -116,21 +116,21 @@ export default function Hero() {
             href="https://github.com/nikhil-sharma2407"
             target="_blank"
             rel="noopener noreferrer"
-            className="glass p-3 rounded-full text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125 hover:shadow-lg"
+            className="glass p-3 rounded-full text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125 hover:shadow-lg cursor-pointer"
             aria-label="GitHub"
           >
             <Github size={24} />
           </a>
           <a
             href="mailto:nikhil.sharma2407@gmail.com"
-            className="glass p-3 rounded-full text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125 hover:shadow-lg"
+            className="glass p-3 rounded-full text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125 hover:shadow-lg cursor-pointer"
             aria-label="Email"
           >
             <Mail size={24} />
           </a>
           <a
             href="tel:+917011590623"
-            className="glass p-3 rounded-full text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125 hover:shadow-lg"
+            className="glass p-3 rounded-full text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125 hover:shadow-lg cursor-pointer"
             aria-label="Phone"
           >
             <Phone size={24} />

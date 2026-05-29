@@ -13,7 +13,7 @@ const experiences = [
       'Reduced manual regression effort, saving ~6-8 engineering hours per release, by introducing Playwright E2E automation across 20+ critical user flows',
       'Delivered a Cloud Commit Estimator in React under strict deadlines with full end-to-end ownership and intern mentorship',
     ],
-    tags: ['React', 'TypeScript', 'Azure OpenAI', 'RAG', 'Playwright', 'Node.js', 'Datadog'],
+    tags: ['React', 'TypeScript', 'Azure OpenAI', 'RAG', 'Playwright', 'Node.js', 'Express.js', 'Datadog', 'Amplitude'],
   },
   {
     company: 'Paytm Money Ltd.',
@@ -29,7 +29,7 @@ const experiences = [
       'Improved repeat-visit performance by 15% using Service Workers and selective caching for static assets and non-market data',
       'Optimized initial load & navigation performance (~10-15%) via adaptive media loading & preload/prefetch strategy',
     ],
-    tags: ['React', 'Module Federation', 'Web Workers', 'Service Workers', 'Redux', 'RxJS'],
+    tags: ['React', 'TypeScript', 'Module Federation', 'Web Workers', 'Service Workers', 'Redux', 'RxJS', 'Express.js'],
   },
   {
     company: 'Infosys',
@@ -43,7 +43,7 @@ const experiences = [
       'Enabled custom chatbot integration with Microsoft Teams and Slack for enterprise communication',
       'Built enterprise client POCs for John Deere, Aetna, and Morgan Stanley demonstrating platform capabilities',
     ],
-    tags: ['React', 'Node.js', 'AWS Polly', 'Alexa', 'NLP', 'Chatbot'],
+    tags: ['React', 'Node.js', 'AWS Polly', 'Alexa', 'NLP', 'JavaScript'],
   },
 ]
 
@@ -94,7 +94,7 @@ export default function Experience() {
 
                   <ul className="space-y-2 mb-4">
                     {exp.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start text-sm">
+                      <li key={i} className="flex items-start">
                         <span className="text-blue-600 dark:text-blue-400 mr-2 mt-0.5 flex-shrink-0">▸</span>
                         <span className="text-gray-700 dark:text-gray-300">{highlight}</span>
                       </li>
@@ -102,10 +102,10 @@ export default function Experience() {
                   </ul>
 
                   <div className="flex flex-wrap gap-2">
-                    {exp.tags.map((tag, i) => (
+                    {exp.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 glass rounded-full text-xs font-medium hover:scale-110 transition-transform duration-300 cursor-default"
+                        className="px-3 py-1.5 glass rounded-full text-sm font-medium hover:scale-110 transition-transform duration-300 cursor-default"
                       >
                         {tag}
                       </span>

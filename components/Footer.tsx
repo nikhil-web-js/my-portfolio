@@ -20,7 +20,7 @@ export default function Footer() {
               href="https://linkedin.com/in/nikhil-web-js"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125 cursor-pointer"
               aria-label="LinkedIn"
             >
               <Linkedin size={24} />
@@ -29,14 +29,14 @@ export default function Footer() {
               href="https://github.com/nikhil-sharma2407"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125 cursor-pointer"
               aria-label="GitHub"
             >
               <Github size={24} />
             </a>
             <a
               href="mailto:nikhil.sharma2407@gmail.com"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125 cursor-pointer"
               aria-label="Email"
             >
               <Mail size={24} />

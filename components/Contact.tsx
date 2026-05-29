@@ -23,14 +23,14 @@ export default function Contact() {
             <div className="space-y-4">
               <a
                 href="mailto:nikhil.sharma2407@gmail.com"
-                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50"
+                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50 cursor-pointer"
               >
                 <Mail size={28} className="flex-shrink-0" />
                 <span className="text-base sm:text-lg break-all">nikhil.sharma2407@gmail.com</span>
               </a>
               <a
                 href="tel:+917011590623"
-                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50"
+                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50 cursor-pointer"
               >
                 <Phone size={28} className="flex-shrink-0" />
                 <span className="text-base sm:text-lg">+91-7011590623</span>
@@ -39,7 +39,7 @@ export default function Contact() {
                 href="https://linkedin.com/in/nikhil-web-js"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50"
+                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50 cursor-pointer"
               >
                 <Linkedin size={28} className="flex-shrink-0" />
                 <span className="text-base sm:text-lg">linkedin.com/in/nikhil-web-js</span>
@@ -48,7 +48,7 @@ export default function Contact() {
                 href="https://github.com/nikhil-sharma2407"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50"
+                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50 cursor-pointer"
               >
                 <Github size={28} className="flex-shrink-0" />
                 <span className="text-base sm:text-lg">github.com/nikhil-sharma2407</span>

@@ -7,62 +7,69 @@ import {
   SiRedux, 
   SiHtml5, 
   SiCss3,
+  SiSass,
   SiNodedotjs,
   SiExpress,
   SiPostgresql,
   SiMongodb,
+  SiPython,
   SiGit,
-  SiPlaywright
+  SiPlaywright,
+  SiDatadog
 } from 'react-icons/si'
-import { Code2, Layers, Server, Bot, Wrench, Zap, Palette, Link2, BarChart3, Flag } from 'lucide-react'
 
 const skillCategories = [
   {
     name: 'Frontend',
     skills: [
-      { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
+      { name: 'JavaScript (ES6+)', icon: SiJavascript, color: '#F7DF1E' },
       { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
-      { name: 'React', icon: SiReact, color: '#61DAFB' },
+      { name: 'React.js', icon: SiReact, color: '#61DAFB' },
       { name: 'Redux', icon: SiRedux, color: '#764ABC' },
+      { name: 'RxJS', icon: null, color: '#B7178C' },
       { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
       { name: 'CSS3', icon: SiCss3, color: '#1572B6' },
+      { name: 'SASS/SCSS', icon: SiSass, color: '#CC6699' },
     ],
   },
   {
-    name: 'Architecture',
+    name: 'Architecture & Performance',
     skills: [
       { name: 'Micro-Frontends', icon: null, color: '#3B82F6' },
       { name: 'Module Federation', icon: null, color: '#8DD6F9' },
+      { name: 'Web Performance Optimization', icon: null, color: '#10B981' },
+      { name: 'Service Workers', icon: null, color: '#FF6B35' },
       { name: 'Design Systems', icon: null, color: '#EC4899' },
-      { name: 'Performance', icon: null, color: '#10B981' },
     ],
   },
   {
     name: 'Backend',
     skills: [
       { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-      { name: 'Express', icon: SiExpress, color: '#000000' },
+      { name: 'Express.js', icon: SiExpress, color: '#000000' },
       { name: 'REST API', icon: null, color: '#009688' },
       { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
       { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
+      { name: 'Python', icon: SiPython, color: '#3776AB' },
     ],
   },
   {
-    name: 'AI Tools',
+    name: 'AI & Dev Tools',
     skills: [
-      { name: 'Claude', icon: null, color: '#D97757' },
+      { name: 'Claude Code', icon: null, color: '#D97757' },
       { name: 'Cursor', icon: null, color: '#000000' },
       { name: 'GitHub Copilot', icon: null, color: '#000000' },
       { name: 'Azure OpenAI', icon: null, color: '#0078D4' },
-      { name: 'RAG', icon: null, color: '#8B5CF6' },
+      { name: 'RAG Pipelines', icon: null, color: '#8B5CF6' },
     ],
   },
   {
-    name: 'Testing & Tools',
+    name: 'Testing & Tooling',
     skills: [
       { name: 'Playwright', icon: SiPlaywright, color: '#2EAD33' },
+      { name: 'Unit Testing', icon: null, color: '#C21325' },
       { name: 'Git', icon: SiGit, color: '#F05032' },
-      { name: 'Datadog', icon: null, color: '#632CA6' },
+      { name: 'Datadog', icon: SiDatadog, color: '#632CA6' },
       { name: 'Amplitude', icon: null, color: '#1F77B4' },
       { name: 'LaunchDarkly', icon: null, color: '#3DD6F5' },
     ],
@@ -105,7 +112,7 @@ export default function Skills() {
                     >
                       {IconComponent && (
                         <IconComponent 
-                          className="w-5 h-5" 
+                          className="w-5 h-5 flex-shrink-0" 
                           style={{ color: skill.color }}
                         />
                       )}

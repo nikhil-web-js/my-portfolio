@@ -135,6 +135,22 @@ body::before {
     animation: float 6s ease-in-out infinite;
   }
   
+  /* Slide down animation for mobile menu */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-slideDown {
+    animation: slideDown 0.3s ease-out;
+  }
+  
   /* Glow effect */
   .glow {
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.3),

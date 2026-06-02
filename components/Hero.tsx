@@ -137,7 +137,12 @@ export default function Hero() {
   }
 
   const handleShareClick = async () => {
-    // Try native share on mobile first
+    // On mobile with native share, show menu to choose what to share
+    // On desktop or unsupported browsers, show menu with copy options
+    setShowShareMenu(!showShareMenu)
+  }
+
+  const sharePortfolio = async () => {
     if (typeof navigator !== 'undefined' && navigator.share) {
       try {
         await navigator.share({
@@ -145,15 +150,33 @@ export default function Hero() {
           text: 'Check out my portfolio - 7+ years building scalable web applications with React, TypeScript, and Node.js',
           url: window.location.origin,
         })
-        return // Successfully shared, exit
+        setShowShareMenu(false)
+        return
       } catch (err) {
-        // User cancelled or error occurred, fall through to show menu
         console.log('Native share failed or cancelled:', err)
       }
     }
-    
-    // Fallback: show dropdown menu
-    setShowShareMenu(!showShareMenu)
+    // Fallback to copy
+    await copyPortfolioLink()
+  }
+
+  const shareResume = async () => {
+    const resumeUrl = `${window.location.origin}/resume`
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Nikhil Sharma - Resume',
+          text: 'Check out my resume - Senior Frontend Engineer with 7+ years of experience',
+          url: resumeUrl,
+        })
+        setShowShareMenu(false)
+        return
+      } catch (err) {
+        console.log('Native share failed or cancelled:', err)
+      }
+    }
+    // Fallback to copy
+    await copyResumeLink()
   }
 
   return (
@@ -215,7 +238,7 @@ export default function Hero() {
             {showShareMenu && (
               <div className="absolute bottom-full mb-2 right-0 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 glass rounded-lg shadow-xl p-2 z-50 border border-gray-300 dark:border-gray-700 min-w-[200px]">
                 <button
-                  onClick={copyPortfolioLink}
+                  onClick={sharePortfolio}
                   className="flex items-center gap-3 px-4 py-2 hover:bg-blue-50 dark:hover:bg-blue-950 rounded-md transition-colors w-full text-left"
                 >
                   {copiedPortfolio ? (
@@ -226,13 +249,13 @@ export default function Hero() {
                   ) : (
                     <>
                       <Link size={18} className="flex-shrink-0" />
-                      <span className="text-sm font-medium">Copy portfolio link</span>
+                      <span className="text-sm font-medium">Share portfolio</span>
                     </>
                   )}
                 </button>
 
                 <button
-                  onClick={copyResumeLink}
+                  onClick={shareResume}
                   className="flex items-center gap-3 px-4 py-2 hover:bg-blue-50 dark:hover:bg-blue-950 rounded-md transition-colors w-full text-left"
                 >
                   {copied ? (
@@ -243,7 +266,7 @@ export default function Hero() {
                   ) : (
                     <>
                       <FileText size={18} className="flex-shrink-0" />
-                      <span className="text-sm font-medium">Copy resume link</span>
+                      <span className="text-sm font-medium">Share resume</span>
                     </>
                   )}
                 </button>

@@ -22,18 +22,12 @@ export default function Education() {
               </div>
               <div className="flex-1">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                  Bachelor of Technology in Computer Science & Engineering
+                  B.Tech in Computer Science & Engineering
                 </h3>
                 <p className="text-lg text-blue-600 dark:text-blue-400 font-semibold mb-1">
                   UIET-KUK, Kurukshetra University
                 </p>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">2014 – 2018</p>
-                <p className="text-gray-700 dark:text-gray-300">
-                  Comprehensive education in computer science fundamentals, software engineering,
-                  data structures, algorithms, and web technologies. Built a strong foundation
-                  in programming, system design, and problem-solving that has been instrumental
-                  in my professional career.
-                </p>
+                <p className="text-gray-600 dark:text-gray-400">2014 – 2018</p>
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 'use client'
 
-import { Mail, Phone, Linkedin, Github, Download } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { Phone, Linkedin, Github, Download, Copy, Check, Share2, Link, ArrowDown, Mail, FileText } from 'lucide-react'
+import { useEffect, useState, useRef } from 'react'
 
 export default function Hero() {
   const roles = [
@@ -17,6 +17,10 @@ export default function Hero() {
   const [displayedText, setDisplayedText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
   const [typingSpeed, setTypingSpeed] = useState(100)
+  const [showShareMenu, setShowShareMenu] = useState(false)
+  const [copied, setCopied] = useState(false)
+  const [copiedPortfolio, setCopiedPortfolio] = useState(false)
+  const shareMenuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const currentRole = roles[currentRoleIndex]
@@ -48,6 +52,138 @@ export default function Hero() {
     return () => clearTimeout(timer)
   }, [displayedText, isDeleting, currentRoleIndex, typingSpeed])
 
+  // Close share menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (shareMenuRef.current && !shareMenuRef.current.contains(event.target as Node)) {
+        setShowShareMenu(false)
+        // Reset copied states when closing
+        setCopied(false)
+        setCopiedPortfolio(false)
+      }
+    }
+    
+    if (showShareMenu) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [showShareMenu])
+
+  const copyResumeLink = async () => {
+    const resumeUrl = `${window.location.origin}/resume`
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(resumeUrl)
+        setCopied(true)
+        console.log('Resume link copied!')
+      } else {
+        throw new Error('Clipboard API not available')
+      }
+    } catch (err) {
+      console.log('Using fallback copy method')
+      // Fallback: create temporary textarea
+      const textarea = document.createElement('textarea')
+      textarea.value = resumeUrl
+      textarea.style.position = 'fixed'
+      textarea.style.opacity = '0'
+      document.body.appendChild(textarea)
+      textarea.select()
+      try {
+        document.execCommand('copy')
+        setCopied(true)
+        console.log('Resume link copied (fallback)!')
+      } catch (fallbackErr) {
+        console.error('Fallback copy failed:', fallbackErr)
+      }
+      document.body.removeChild(textarea)
+    }
+    
+    setTimeout(() => {
+      setCopied(false)
+    }, 2500)
+  }
+
+  const copyPortfolioLink = async () => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(window.location.origin)
+        setCopiedPortfolio(true)
+        console.log('Portfolio link copied!')
+      } else {
+        throw new Error('Clipboard API not available')
+      }
+    } catch (err) {
+      console.log('Using fallback copy method')
+      // Fallback: create temporary textarea
+      const textarea = document.createElement('textarea')
+      textarea.value = window.location.origin
+      textarea.style.position = 'fixed'
+      textarea.style.opacity = '0'
+      document.body.appendChild(textarea)
+      textarea.select()
+      try {
+        document.execCommand('copy')
+        setCopiedPortfolio(true)
+        console.log('Portfolio link copied (fallback)!')
+      } catch (fallbackErr) {
+        console.error('Fallback copy failed:', fallbackErr)
+      }
+      document.body.removeChild(textarea)
+    }
+    
+    setTimeout(() => {
+      setCopiedPortfolio(false)
+    }, 2500)
+  }
+
+  const handleShareClick = async () => {
+    // On mobile with native share, show menu to choose what to share
+    // On desktop or unsupported browsers, show menu with copy options
+    setShowShareMenu(!showShareMenu)
+  }
+
+  const sharePortfolio = async () => {
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share({
+          text: `Nikhil Sharma - Portfolio
+
+Check out my portfolio showcasing 7+ years of building scalable web applications with React, TypeScript, and Node.js
+
+${window.location.origin}`,
+        })
+        setShowShareMenu(false)
+        return
+      } catch (err) {
+        console.log('Native share failed or cancelled:', err)
+      }
+    }
+    // Fallback to copy
+    await copyPortfolioLink()
+  }
+
+  const shareResume = async () => {
+    const resumeUrl = `${window.location.origin}/resume`
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      try {
+        await navigator.share({
+          text: `Nikhil Sharma - Resume
+Senior Frontend Engineer
+
+View my professional resume - 7+ years experience in React, TypeScript, Micro-Frontends, and AI Integration
+
+${resumeUrl}`,
+        })
+        setShowShareMenu(false)
+        return
+      } catch (err) {
+        console.log('Native share failed or cancelled:', err)
+      }
+    }
+    // Fallback to copy
+    await copyResumeLink()
+  }
+
   return (
     <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 pb-8 sm:pb-0 relative">
       {/* Floating gradient orbs */}
@@ -71,28 +207,21 @@ export default function Hero() {
         </div>
 
         <div className="mb-8 max-w-3xl mx-auto">
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+          <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
             Senior Frontend Engineer with 7+ years of experience building scalable, high-performance web applications 
             using React, TypeScript, and Node.js.
           </p>
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+          <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
             Led AI pilot programs integrating Azure OpenAI, architected micro-frontend systems using Module Federation, 
             and delivered enterprise-grade features for platforms serving millions of users.
           </p>
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
             Passionate about leveraging AI-assisted development tools (Claude Code, Cursor, GitHub Copilot) to accelerate 
             delivery and build innovative solutions.
           </p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-8">
-          <a
-            href="mailto:nikhil.sharma2407@gmail.com"
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 glow cursor-pointer"
-          >
-            <Mail size={20} />
-            Get in touch
-          </a>
           <a
             href="/Nikhil_Resume_Full_Stack.pdf"
             download="Nikhil-Resume-Full-Stack-7+yoe.pdf"
@@ -101,6 +230,54 @@ export default function Hero() {
             <Download size={20} />
             Download CV
           </a>
+          <div className="relative" ref={shareMenuRef}>
+            <button
+              onClick={handleShareClick}
+              className="flex items-center gap-2 px-6 py-3 glass rounded-lg hover:scale-105 transition-all duration-300 text-gray-800 dark:text-gray-200 cursor-pointer"
+            >
+              <Share2 size={20} />
+              Share
+            </button>
+            
+            {/* Share dropdown menu - opens upward */}
+            {showShareMenu && (
+              <div className="absolute bottom-full mb-2 right-0 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 glass rounded-lg shadow-xl p-2 z-50 border border-gray-300 dark:border-gray-700 min-w-[200px]">
+                <button
+                  onClick={sharePortfolio}
+                  className="flex items-center gap-3 px-4 py-2 hover:bg-blue-50 dark:hover:bg-blue-950 rounded-md transition-colors w-full text-left"
+                >
+                  {copiedPortfolio ? (
+                    <>
+                      <Check size={18} className="text-green-600 flex-shrink-0" />
+                      <span className="text-sm font-medium text-green-600">Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Link size={18} className="flex-shrink-0" />
+                      <span className="text-sm font-medium">Share portfolio</span>
+                    </>
+                  )}
+                </button>
+
+                <button
+                  onClick={shareResume}
+                  className="flex items-center gap-3 px-4 py-2 hover:bg-blue-50 dark:hover:bg-blue-950 rounded-md transition-colors w-full text-left"
+                >
+                  {copied ? (
+                    <>
+                      <Check size={18} className="text-green-600 flex-shrink-0" />
+                      <span className="text-sm font-medium text-green-600">Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <FileText size={18} className="flex-shrink-0" />
+                      <span className="text-sm font-medium">Share resume</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="flex justify-center gap-6">

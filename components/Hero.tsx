@@ -49,13 +49,13 @@ export default function Hero() {
   }, [displayedText, isDeleting, currentRoleIndex, typingSpeed])
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 relative">
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 pb-8 sm:pb-0 relative">
       {/* Floating gradient orbs */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <div className="mb-8">
+        <div className="mb-8 mt-2">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 gradient-text float-animation">
             Nikhil Sharma
           </h1>
@@ -94,7 +94,8 @@ export default function Hero() {
             Get in touch
           </a>
           <a
-            href="#"
+            href="/Nikhil_Resume_Full_Stack.pdf"
+            download="Nikhil-Resume-Full-Stack-7+yoe.pdf"
             className="flex items-center gap-2 px-6 py-3 glass rounded-lg hover:scale-105 transition-all duration-300 text-gray-800 dark:text-gray-200 cursor-pointer"
           >
             <Download size={20} />
@@ -113,7 +114,7 @@ export default function Hero() {
             <Linkedin size={24} />
           </a>
           <a
-            href="https://github.com/nikhil-sharma2407"
+            href="https://github.com/Nikhil-sharma24"
             target="_blank"
             rel="noopener noreferrer"
             className="glass p-3 rounded-full text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125 hover:shadow-lg cursor-pointer"

@@ -114,7 +114,7 @@ This project is open source and available under the MIT License.
 - **Email**: nikhil.sharma2407@gmail.com
 - **Phone**: +91-7011590623
 - **LinkedIn**: [linkedin.com/in/nikhil-web-js](https://linkedin.com/in/nikhil-web-js)
-- **GitHub**: [github.com/nikhil-sharma2407](https://github.com/nikhil-sharma2407)
+- **GitHub**: [github.com/Nikhil-sharma24](https://github.com/Nikhil-sharma24)
 
 ---
 

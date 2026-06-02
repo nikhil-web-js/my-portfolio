@@ -20,17 +20,17 @@ export default function Contact() {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
               Reach out directly:
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-4 relative z-10">
               <a
                 href="mailto:nikhil.sharma2407@gmail.com"
-                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50 cursor-pointer"
+                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50 cursor-pointer relative z-10"
               >
                 <Mail size={28} className="flex-shrink-0" />
                 <span className="text-base sm:text-lg break-all">nikhil.sharma2407@gmail.com</span>
               </a>
               <a
                 href="tel:+917011590623"
-                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50 cursor-pointer"
+                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50 cursor-pointer relative z-10"
               >
                 <Phone size={28} className="flex-shrink-0" />
                 <span className="text-base sm:text-lg">+91-7011590623</span>
@@ -39,19 +39,19 @@ export default function Contact() {
                 href="https://linkedin.com/in/nikhil-web-js"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50 cursor-pointer"
+                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50 cursor-pointer relative z-10"
               >
                 <Linkedin size={28} className="flex-shrink-0" />
                 <span className="text-base sm:text-lg">linkedin.com/in/nikhil-web-js</span>
               </a>
               <a
-                href="https://github.com/nikhil-sharma2407"
+                href="https://github.com/Nikhil-sharma24"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50 cursor-pointer"
+                className="flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:translate-x-2 p-3 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-950/50 cursor-pointer relative z-10"
               >
                 <Github size={28} className="flex-shrink-0" />
-                <span className="text-base sm:text-lg">github.com/nikhil-sharma2407</span>
+                <span className="text-base sm:text-lg">github.com/Nikhil-sharma24</span>
               </a>
             </div>
           </div>

@@ -6,7 +6,7 @@ import {
   SiReact, 
   SiRedux, 
   SiHtml5, 
-  SiCss3,
+  SiCss,
   SiSass,
   SiNodedotjs,
   SiExpress,
@@ -14,7 +14,6 @@ import {
   SiMongodb,
   SiPython,
   SiGit,
-  SiPlaywright,
   SiDatadog
 } from 'react-icons/si'
 
@@ -28,8 +27,20 @@ const skillCategories = [
       { name: 'Redux', icon: SiRedux, color: '#764ABC' },
       { name: 'RxJS', icon: null, color: '#B7178C' },
       { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
-      { name: 'CSS3', icon: SiCss3, color: '#1572B6' },
+      { name: 'CSS3', icon: SiCss, color: '#1572B6' },
       { name: 'SASS/SCSS', icon: SiSass, color: '#CC6699' },
+    ],
+  },
+  {
+    name: 'Backend',
+    skills: [
+      { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
+      { name: 'Express.js', icon: SiExpress, color: '#000000' },
+      { name: 'REST API', icon: null, color: '#009688' },
+      { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
+      { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
+      { name: 'Python', icon: SiPython, color: '#3776AB' },
+      { name: 'Redis', icon: null, color: '#DC382D' },
     ],
   },
   {
@@ -43,14 +54,14 @@ const skillCategories = [
     ],
   },
   {
-    name: 'Backend',
+    name: 'Security & Quality',
     skills: [
-      { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-      { name: 'Express.js', icon: SiExpress, color: '#000000' },
-      { name: 'REST API', icon: null, color: '#009688' },
-      { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
-      { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
-      { name: 'Python', icon: SiPython, color: '#3776AB' },
+      { name: 'OWASP Top 10', icon: null, color: '#000000' },
+      { name: 'SAST/SCA/DAST', icon: null, color: '#6B46C1' },
+      { name: 'Secure-by-Design', icon: null, color: '#059669' },
+      { name: 'Fortify', icon: null, color: '#1E3A8A' },
+      { name: 'Veracode', icon: null, color: '#00B4A0' },
+      { name: 'SonarQube', icon: null, color: '#4E9BCD' },
     ],
   },
   {
@@ -66,7 +77,7 @@ const skillCategories = [
   {
     name: 'Testing & Tooling',
     skills: [
-      { name: 'Playwright', icon: SiPlaywright, color: '#2EAD33' },
+      { name: 'Playwright', icon: null, color: '#2EAD33' },
       { name: 'Unit Testing', icon: null, color: '#C21325' },
       { name: 'Git', icon: SiGit, color: '#F05032' },
       { name: 'Datadog', icon: SiDatadog, color: '#632CA6' },
@@ -96,7 +107,7 @@ export default function Skills() {
           {skillCategories.map((category, index) => (
             <div
               key={category.name}
-              className="glass rounded-xl p-6 shadow-lg gradient-border hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="glass rounded-xl p-6 shadow-lg gradient-border hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">

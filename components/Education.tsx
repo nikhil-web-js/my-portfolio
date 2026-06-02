@@ -15,7 +15,7 @@ export default function Education() {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="glass rounded-xl p-8 shadow-lg gradient-border hover:shadow-2xl transition-all duration-300">
+          <div className="glass rounded-xl p-8 shadow-lg gradient-border hover:shadow-2xl transition-all duration-300 cursor-pointer">
             <div className="flex items-start gap-4">
               <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-3 rounded-lg shadow-lg">
                 <GraduationCap className="text-white" size={32} />

@@ -5,29 +5,25 @@ const projects = [
     title: 'Linux Automation Scripts',
     year: '2024',
     description:
-      'Personal Linux productivity, automation utilities, and GNOME extensions developed using AI-assisted development workflows.',
+      'Applying AI-assisted development and an instinct for UX friction to personal productivity tooling on Linux.',
     highlights: [
-      'Built a custom GNOME Shell extension that auto-moves fullscreen apps to a new workspace (macOS-style UX)',
-      'Bluetooth MAC address sync script for dual-boot Windows/Linux',
-      'Touchpad history navigation gesture fix for Chrome/Brave on Wayland',
-      'Fixed Ubuntu sticky keys using keyd one-shot modifiers. GNOME\'s sticky keys stay latched too long (unlike Windows/Mac) and cause double-trigger issues with modifier keys on Wayland',
-      'GNOME keyboard shortcut backup/restore utilities',
-      'ZRAM performance tuning for Ubuntu',
+      'Built a custom GNOME Shell extension that auto-moves fullscreen apps to a new workspace (macOS-style UX), identified the gap, spec\'d and built it with Claude Code',
+      'Fixed Ubuntu sticky keys on Wayland using keyd one-shot modifiers, replicating the intuitive Windows/Mac modifier behaviour',
+      'Bluetooth MAC address sync script for dual-boot Windows/Linux, touchpad history gesture fix for Chrome/Brave on Wayland',
+      'ZRAM performance tuning and GNOME keyboard shortcut backup/restore utilities',
     ],
-    tags: ['Linux', 'GNOME', 'Shell Scripting', 'Automation', 'Wayland'],
-    github: 'https://github.com/nikhil-sharma2407/linux-automation',
+    tags: ['Linux', 'GNOME', 'Shell Scripting', 'AI-Assisted Development', 'Wayland', 'Claude Code'],
+    github: 'https://github.com/Nikhil-sharma24/linux-scripts',
     link: null,
   },
   {
-    title: 'ROC Reports Automation',
+    title: 'Registrar of Companies (ROC) Reports Automation',
     year: '2016',
     description:
-      'Built and sold an automation utility for LAA & Associates, a Chartered Accountant firm (Freelance project).',
+      'Freelance project during B.Tech - Built and sold an automation utility for LAA & Associates, a Chartered Accountant firm.',
     highlights: [
       'Generates Company and LLP reports in MCA-prescribed format by processing data from the Ministry of Corporate Affairs (MCA) portal',
       'Replaced fully manual report generation for 5,000+ vendors',
-      'Automated data extraction, validation, and report formatting',
-      'Reduced report generation time from hours to minutes',
     ],
     tags: ['Automation', 'Python', 'Data Processing', 'Freelance'],
     github: null,
@@ -53,7 +49,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="glass rounded-xl p-6 shadow-lg gradient-border hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+              className="glass rounded-xl p-6 shadow-lg gradient-border hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 cursor-pointer"
             >
               <div className="flex justify-between items-start mb-4">
                 <div>

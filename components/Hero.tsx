@@ -114,7 +114,7 @@ export default function Hero() {
             <Linkedin size={24} />
           </a>
           <a
-            href="https://github.com/Nikhil-sharma24"
+            href="https://github.com/nikhil-web-js"
             target="_blank"
             rel="noopener noreferrer"
             className="glass p-3 rounded-full text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-125 hover:shadow-lg cursor-pointer"

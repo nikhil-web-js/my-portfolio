@@ -13,7 +13,7 @@ const projects = [
       'ZRAM performance tuning and GNOME keyboard shortcut backup/restore utilities',
     ],
     tags: ['Linux', 'GNOME', 'Shell Scripting', 'AI-Assisted Development', 'Wayland', 'Claude Code'],
-    github: 'https://github.com/Nikhil-sharma24/linux-scripts',
+    github: 'https://github.com/nikhil-web-js/linux-scripts',
     link: null,
   },
   {

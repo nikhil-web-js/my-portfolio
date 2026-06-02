@@ -146,9 +146,11 @@ export default function Hero() {
     if (typeof navigator !== 'undefined' && navigator.share) {
       try {
         await navigator.share({
-          title: 'Nikhil Sharma - Portfolio',
-          text: `Check out my portfolio showcasing 7+ years of building scalable web applications with React, TypeScript, and Node.js`,
-          url: window.location.origin,
+          text: `Nikhil Sharma - Portfolio
+
+Check out my portfolio showcasing 7+ years of building scalable web applications with React, TypeScript, and Node.js
+
+${window.location.origin}`,
         })
         setShowShareMenu(false)
         return
@@ -165,9 +167,12 @@ export default function Hero() {
     if (typeof navigator !== 'undefined' && navigator.share) {
       try {
         await navigator.share({
-          title: 'Nikhil Sharma - Resume',
-          text: `Senior Frontend Engineer - 7+ years experience in React, TypeScript, Micro-Frontends, and AI Integration`,
-          url: resumeUrl,
+          text: `Nikhil Sharma - Resume
+Senior Frontend Engineer
+
+View my professional resume - 7+ years experience in React, TypeScript, Micro-Frontends, and AI Integration
+
+${resumeUrl}`,
         })
         setShowShareMenu(false)
         return

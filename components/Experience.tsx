@@ -2,7 +2,7 @@ const experiences = [
   {
     company: 'Confluent India Pvt. Ltd.',
     role: 'Senior Software Engineer',
-    period: 'Sep 2024 – Mar 2026',
+    period: 'Sep 2024 – Present',
     location: 'India',
     description: 'Confluent Cloud – Connect UI & Streaming Platform: React/TypeScript console for Kafka Connect-based real-time data pipelines',
     highlights: [

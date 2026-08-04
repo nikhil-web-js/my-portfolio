@@ -1,8 +1,12 @@
+type ExperienceProps = {
+  showPresent?: boolean
+}
+
 const experiences = [
   {
     company: 'Confluent India Pvt. Ltd.',
     role: 'Senior Software Engineer',
-    period: 'Sep 2024 – Present',
+    period: 'Sep 2024 – Mar 2026',
     location: 'India',
     description: 'Confluent Cloud – Connect UI & Streaming Platform: React/TypeScript console for Kafka Connect-based real-time data pipelines',
     highlights: [
@@ -50,7 +54,7 @@ const experiences = [
   },
 ]
 
-export default function Experience() {
+export default function Experience({ showPresent = false }: ExperienceProps) {
   return (
     <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-5xl mx-auto">
@@ -87,7 +91,7 @@ export default function Experience() {
                       </p>
                     </div>
                     <div className="text-sm text-blue-600 dark:text-blue-400 font-semibold whitespace-nowrap">
-                      {exp.period}
+                      {index === 0 && showPresent ? 'Sep 2024 – Present' : exp.period}
                     </div>
                   </div>
 

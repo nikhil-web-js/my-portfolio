@@ -7,13 +7,21 @@ import Contact from '@/components/Contact'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
-export default function Home() {
+type HomeProps = {
+  searchParams?: {
+    [key: string]: string | string[] | undefined
+  }
+}
+
+export default function Home({ searchParams }: HomeProps) {
+  const showPresent = searchParams?.s === '1' || searchParams?.s === 'true'
+
   return (
     <main className="min-h-screen">
       <Navigation />
       <Hero />
       <Skills />
-      <Experience />
+      <Experience showPresent={showPresent} />
       <Projects />
       <Education />
       <Contact />
